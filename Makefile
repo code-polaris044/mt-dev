@@ -96,7 +96,7 @@ endif
 
 exec-mysql:
 	opt=""; if ! [ -t 0 ] ; then opt="-T" ; fi; \
-		${_DC} exec $$opt db mysql -uroot -ppassword -h127.0.0.1 ${MYSQL_COMMAND_ARGS}
+		winpty ${_DC} exec $$opt db mysql -uroot -ppassword -h127.0.0.1 ${MYSQL_COMMAND_ARGS}
 
 # FIXME:
 exec-ldappasswd:
@@ -124,7 +124,7 @@ ifneq (${ARCHIVE},)
 ifeq (${RECIPE},)
 	# TBD: random name?
 	$(eval MT_HOME_PATH=mt-dev-mt-home-tmp)
-	${MAKEFILE_DIR}/bin/extract-archive ${BASE_ARCHIVE_PATH} ${MT_HOME_PATH} $(shell echo ${ARCHIVE} | tr ',' ' ')
+	`pwd`/bin/extract-archive `pwd`/archive ${MT_HOME_PATH} $(shell echo ${ARCHIVE} | tr ',' ' ')
 endif
 endif
 
