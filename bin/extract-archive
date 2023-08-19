@@ -25,8 +25,8 @@ for f in "$@"; do
         path=$base/$f
     fi
     $md5 $path
-    docker run --rm -v $dest:/dest -v $path:/archive/$name -v $script_dir/$script:/usr/local/bin/$script -w /dest busybox:uclibc /usr/local/bin/$script /dest /archive/$name
+    docker run --rm -v $dest:/dest -v /$(pwd)/archive/$name://archive/$name -v /$script_dir/$script://usr/local/bin/$script -w //dest busybox:uclibc //usr/local/bin/$script //dest //archive/$name
 done
 rm -fr $tmpdir
 
-docker run --rm -v $dest:/dest busybox:uclibc ls /dest/mt.cgi > /dev/null
+docker run --rm -v $dest:/dest busybox:uclibc ls //dest/mt.cgi > /dev/null
