@@ -94,7 +94,7 @@ If you have the following environment, you can replace `vagrant mt-dev` with `ma
     * You can also use Docker for Mac
 
 ```
-$ make up ARCHIVE=MT7-R4605.zip RECIPE=mt-plugin-MyAwsomePlugin MT_CONFIG_CGI=mt-config.cgi-local
+$ make up ARCHIVE=MT7-R5404.zip MT_CONFIG_CGI=mt-config.cgi-local
 ```
 
 ### Environment
