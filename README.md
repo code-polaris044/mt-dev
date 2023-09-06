@@ -1,4 +1,4 @@
-### mt-dev
+### 菅原俊哉の開発環境です。
 
 This is the Movable Type development environment.
 
